@@ -1,5 +1,7 @@
 @import "~modularscale-sass";
 
+@import '../node_modules/reset-css/sass/reset';
+
 $modularscale: (
   base: 1.1em,
   ratio: 1.333

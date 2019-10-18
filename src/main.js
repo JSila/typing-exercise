@@ -6,6 +6,8 @@ const App = (props) => {
     const [history, setHistory] = useState([]);
 
     const handleKeyPress = e => {
+        if (current >= props.text.length - 1) return;
+
         const success = e.key === props.text[current];
         setHistory([...history, success]);
         setCurrent(current + 1);
@@ -13,6 +15,8 @@ const App = (props) => {
 
     const handleBackspace = (e) => {
         if (e.key !== 'Backspace') return;
+        if (current <= 0) return;
+
         setHistory(history.slice(0, history.length-1));
         setCurrent(current - 1);
     };
